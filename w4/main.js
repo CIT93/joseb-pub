@@ -39,15 +39,41 @@ function start(householdNumbers, houseSize) {
   const houseHoldPTS = determinePoints(householdNumbers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
-  cfpData.push([householdNumbers, houseSize, houseHoldPTS, houseSizePTS, total]);
+  cfpData.push([
+    householdNumbers,
+    houseSize,
+    houseHoldPTS,
+    houseSizePTS,
+    total,
+  ]);
 }
+
+// function displayOutput() {
+//   for (arr of cfpData){
+//     console.log(arr)
+//     const output = document.getElementById("output");
+//     const newP = document.createElement("p");
+//     newP.textContent = `Carbon Footprint total is ${arr[4]}`;
+//     output.appendChild(newP);
+//   }
+
+// }
 
 function displayOutput() {
-  
-
+  let size;
+  for (arr of cfpData) {
+    console.log(arr);
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    if (arr[1] === "apt") {
+      size = "an apartment";
+    } else {
+      size = arr[1];
+    }
+    newP.textContent = `The total number of Household members is ${arr[0]}, The House is ${size}, so total the total Carbon Footprint is ${arr[4]}`;
+    output.appendChild(newP);
+  }
 }
-
-
 
 start(5, "apt");
 start(4, "large");
@@ -58,4 +84,4 @@ start(1, "large");
 start(10, "large");
 start(10, "apt");
 
-displayOutput()
+displayOutput();
