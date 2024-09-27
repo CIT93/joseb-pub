@@ -26,17 +26,26 @@ function renderTblHeading() {
 }
 
 function rendertTbl(data) {
-  if (!table) renderTblHeading();
+  if (!table) renderTblHeading(); // to ensure table is created once
 
-  const tbody = table.getElementsByTagName("tbody")[0]; // Get the existing tbody using getElementsByTagName
-  const tr = document.createElement("tr");
-  const trTextArr = ["Jose", 3, "Large", 20];
+  const tbody = table.getElementsByTagName("tbody")[0]; // Get the existing tbody
+  tbody.innerHTML = ""; //clear existing rows so it doesnt duplicate data
+  
+  data.forEach((dataObj) => {
+    const tr = document.createElement("tr");
 
-  trTextArr.forEach(function (text) {
-    const td = document.createElement("td");
-    td.textContent = text;
-    tr.appendChild(td);
-  });
+    // Destructure relevant fields, excluding last name, house member points, and house size points. learned something new
+    const { fNameObj, householdNumberObj, houseSizeObj, totalObj } = dataObj;
+
+    // Array of the values to render
+    const trTextArr = [fNameObj, householdNumberObj, houseSizeObj, totalObj];
+
+    // Loop through the array and create table cells
+    trTextArr.forEach(function (text) {
+      const td = document.createElement("td");
+      td.textContent = text;
+      tr.appendChild(td);
+    });
 
   const td = document.createElement("td");
   const btnEdit = document.createElement("button");
@@ -49,6 +58,7 @@ function rendertTbl(data) {
   tr.appendChild(td);
   tbody.appendChild(tr);
   
+});
 }
 
 export { rendertTbl };
