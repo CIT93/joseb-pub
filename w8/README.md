@@ -12,3 +12,8 @@
 - finishing iterating the data then it creates the buttons
 - the complete row now shows
 - the form gets reset
+
+# Feedback
+- you went more in detail which is good to understand whats the code actually doing
+- it was helpful to widen my scope of what else to pay attention.
+- I would like to know more about other ways to do so the table does not repeat the data and to avoid duplicate header.
