@@ -4,7 +4,7 @@ import { FORM, OUTPUT, errorElement, cfpData } from "./global.js";
 import { saveLS } from "./storage.js"
 
 
-const start =  function(householdNumbers, houseSize) {
+const start = (householdNumbers, houseSize) => {
   const houseHoldPTS = determinePoints(householdNumbers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
@@ -22,7 +22,7 @@ const start =  function(householdNumbers, houseSize) {
 
 rendertTbl(cfpData);
 
-FORM.addEventListener("submit", function (e) {
+FORM.addEventListener("submit", e => {
   console.log("Form submitted!");
   const firstName = FORM.firstname.value;
   const lastName = FORM.lastname.value;
@@ -55,14 +55,20 @@ FORM.addEventListener("submit", function (e) {
 });
 
 
+//rest operator
+//const add2 = function(...a) {
+//  return 2 + a[3];
+//};
 
-const add2 = function(...a) {
-  return 2 + a[3];
-};
+//const result = add2();
 
-const result = add2();
+//arrow function
+const add2 = (a) => 2 + a;
 
-//spread argument 
+
+const result = add2(100);
+
+ 
 
 //IIFE
 //const a = 3;
