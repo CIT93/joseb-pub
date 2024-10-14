@@ -14,7 +14,7 @@ const renderTblHeading = () => {
     "Footprint",
     "Actions",
   ];
-  headingTextArr.forEach(function (text) {
+  headingTextArr.forEach(text => {
     const th = document.createElement("th");
     th.textContent = text;
     tr.appendChild(th);
@@ -40,11 +40,11 @@ const renderTblBtn = (index, data) => {
   btnDel.textContent = "Del"; //fills in the button with the name
   tdActions.appendChild(btnEdit); //appends the button to the cell
   tdActions.appendChild(btnDel);
-  btnDel.addEventListener("click", function (e) {
+  btnDel.addEventListener("click", e => {
     onUpdate(index, data)
   });
 
-  btnEdit.addEventListener("click", function (e) {
+  btnEdit.addEventListener("click", e => {
     const rowData = data[index]; // Get the row data from array
     FORM.firstname.value = rowData.fNameObj; // Populate the form fields
     FORM.lastname.value = rowData.lNameObj;
@@ -82,7 +82,7 @@ const renderTblBody = (data, ...excludedKeys) => {
   return tbody;
 }
 
-const rendertTbl = (data) => {
+const rendertTbl = data => {
   TBL.innerHTML = ""; // Clear previous table content
   if (data.length === 0) {
     //check if the array is empty, if true exits the function
