@@ -11,6 +11,7 @@ const renderTblHeading = () => {
     "Name",
     "Household",
     "HouseSize",
+    "Food Choices",
     "Footprint",
     "Actions",
   ];
@@ -50,6 +51,7 @@ const renderTblBtn = (index, data) => {
     FORM.lastname.value = rowData.last;
     FORM.housem.value = rowData.houseMembers;
     FORM.houses.value = rowData.houseSize;
+    FORM.food.value = rowData.food;
     onUpdate(index, data)
     
   });
@@ -89,7 +91,7 @@ const rendertTbl = data => {
     return;
   }
   const table = renderTblHeading();
-  const tbody = renderTblBody(data, "last", "houseHoldPoints", "houseSizePTS"); // 2-4 arguments are the exluded keys
+  const tbody = renderTblBody(data, "last", "houseHoldPoints", "houseSizePTS", "foodPTS"); // 2-4 arguments are the exluded keys
   table.appendChild(tbody);
   TBL.appendChild(table);
 }

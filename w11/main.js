@@ -28,6 +28,7 @@ FORM.addEventListener("submit", e => {
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.housem.value);
   const houseSize = FORM.houses.value;
+  const food = FORM.food.value;
 
   let messages = []
 
@@ -47,11 +48,11 @@ FORM.addEventListener("submit", e => {
     return;
   }
   console.log("Validation passed! Proceeding...");
-  const jose = new FP(firstName, lastName, houseMembers, houseSize);
+  const jose = new FP(firstName, lastName, houseMembers, houseSize, food);
   //start(houseMembers, houseSize);
   OUTPUT.innerHTML = "";
   cfpData.push(jose)
   saveLS(cfpData);
-  FORM.reset();
+  //FORM.reset();
   rendertTbl(cfpData);
 });
