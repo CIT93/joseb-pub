@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Launch Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+
+    <form id="launchForm">
+        <h1>🚀 Launch Mission</h1>
+        <label for="astronautName">Astronaut Name:</label>
+        <input type="text" id="astronautName" name="astronautName" required placeholder="Enter your name">
+
+        <label for="missionCode">Mission Code:</label>
+        <input type="text" id="missionCode" name="missionCode" required placeholder="Enter mission code">
+
+        <button type="submit" class="center-button">Initiate Launch</button>
+    </form>
+<br>
+<br>
+    <div class="output" id="outputMessage"></div>
+
+</body>
+</html>
