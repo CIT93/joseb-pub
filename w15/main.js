@@ -32,15 +32,15 @@ FORM.addEventListener("submit", e => {
 
   let messages = []
 
-  if (!firstName){
+  if (!firstName) {
     messages.push("Name is required")
   }
 
-  if (!lastName){
+  if (!lastName) {
     messages.push("Last Name is required")
   }
 
-  if (messages.length > 0){
+  if (messages.length > 0) {
     console.log("Validation failed", messages);
     e.preventDefault();
     errorElement.innerText = messages.join(", ")
@@ -49,33 +49,8 @@ FORM.addEventListener("submit", e => {
   }
   console.log("Validation passed! Proceeding...");
   const jose = new FP(firstName, lastName, houseMembers, houseSize, food);
-  //start(houseMembers, houseSize);
   OUTPUT.innerHTML = "";
   cfpData.push(jose)
   saveLS(cfpData);
-  //FORM.reset();
   rendertTbl(cfpData);
 });
-
-
-function orderPizza(callback) {
-  setTimeout(() => {
-    const pizza = '🍕'
-    callback();
-  }, 2000)
-}
-
-function pizzaReady(pizza) {
-  console.log(`Eat the ${pizza}`)
-}
-
-
-orderPizza(pizzaReady);
-console.log('Call Qoli')
-console.log(`Eat ${pizza}`)
-
-
-window.addEventListener('click', callback)
-function callback() {
-  console.log('Cliked')
-};

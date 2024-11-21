@@ -53,7 +53,7 @@ const renderTblBtn = (index, data) => {
     FORM.houses.value = rowData.houseSize;
     FORM.food.value = rowData.food;
     onUpdate(index, data)
-    
+
   });
 
   return tdActions;
@@ -69,13 +69,36 @@ const renderTblBody = data => {
 
     keys.forEach(key => {
       const td = document.createElement("td"); // create cell
-        td.textContent = obj[key]; // set the content in the cell
-        tr.appendChild(td); // append to the row
+      td.textContent = obj[key]; // set the content in the cell
+      tr.appendChild(td); // append to the row
     })
     const tdActions = renderTblBtn(index, data);
     tr.appendChild(tdActions); //appends the button to the row
     tbody.appendChild(tr); // append the row to tbody
   });
+  
+  // Calculate the average total
+  const average = data.reduce((sum, item) => sum + (item.total || 0), 0) / data.length;
+
+  // Create a row for the average
+  const trAverage = document.createElement("tr");
+  const tdAverageLabel = document.createElement("td");
+  tdAverageLabel.colSpan = 4; // Span across the first four columns
+  tdAverageLabel.textContent = "Average Footprint";
+  tdAverageLabel.style.fontWeight = "bold";
+
+  const tdAverageValue = document.createElement("td");
+  tdAverageValue.textContent = average.toFixed(2); // Display the average with two decimal places
+  tdAverageValue.style.fontWeight = "bold";
+
+  trAverage.appendChild(tdAverageLabel);
+  trAverage.appendChild(tdAverageValue);
+
+  const tdEmptyActions = document.createElement("td"); // Empty cell for the "Actions" column
+  trAverage.appendChild(tdEmptyActions);
+
+  tbody.appendChild(trAverage); // Append the average row to tbody
+
 
   return tbody;
 }
