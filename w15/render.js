@@ -59,6 +59,12 @@ const renderTblBtn = (index, data) => {
   return tdActions;
 }
 
+const calculateAverageTotal = data => {
+  const totalPoints = data.reduce((sum, item) => sum + (item.total || 0), 0);
+  return totalPoints / data.length;
+};
+
+
 const renderTblBody = data => {
   const tbody = document.createElement("tbody");
 
@@ -76,10 +82,8 @@ const renderTblBody = data => {
     tr.appendChild(tdActions); //appends the button to the row
     tbody.appendChild(tr); // append the row to tbody
   });
-  
-  // Calculate the average total
-  const average = data.reduce((sum, item) => sum + (item.total || 0), 0) / data.length;
 
+  const average = calculateAverageTotal(data);
   // Create a row for the average
   const trAverage = document.createElement("tr");
   const tdAverageLabel = document.createElement("td");
