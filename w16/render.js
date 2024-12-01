@@ -8,11 +8,9 @@ const renderTblHeading = () => {
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
   const headingTextArr = [
-    "Name",
-    "Household",
-    "HouseSize",
-    "Food Choices",
-    "Footprint",
+    "First",
+    "Last",
+    "Footprint Total",
     "Actions",
   ];
   headingTextArr.forEach(text => {
@@ -52,6 +50,10 @@ const renderTblBtn = (index, data) => {
     FORM.housem.value = rowData.houseMembers;
     FORM.houses.value = rowData.houseSize;
     FORM.food.value = rowData.food;
+    FORM.foodSource.value = rowData.foodSource;
+    FORM.owedMachines.value = rowData.owedMachines;
+    FORM.dwRuns.value = rowData.dwRuns;
+    FORM.wmRuns.value = rowData.wmRuns;
     onUpdate(index, data)
 
   });
@@ -71,7 +73,7 @@ const renderTblBody = data => {
   //Loop thru the objects key pairs
   data.forEach((obj, index) => {
     const tr = document.createElement("tr"); // Create new row
-    const keys = ["first", "houseMembers", "houseSize", "food", "total"]
+    const keys = ["first", "last", "total"]
 
     keys.forEach(key => {
       const td = document.createElement("td"); // create cell
@@ -87,7 +89,7 @@ const renderTblBody = data => {
   // Create a row for the average
   const trAverage = document.createElement("tr");
   const tdAverageLabel = document.createElement("td");
-  tdAverageLabel.colSpan = 4; // Span across the first four columns
+  tdAverageLabel.colSpan = 3; // Span across the first four columns
   tdAverageLabel.textContent = "Average Footprint";
   tdAverageLabel.style.fontWeight = "bold";
 
@@ -98,8 +100,8 @@ const renderTblBody = data => {
   trAverage.appendChild(tdAverageLabel);
   trAverage.appendChild(tdAverageValue);
 
-  const tdEmptyActions = document.createElement("td"); // Empty cell for the "Actions" column
-  trAverage.appendChild(tdEmptyActions);
+  // const tdEmptyActions = document.createElement("td"); // Empty cell for the "Actions" column
+  // trAverage.appendChild(tdEmptyActions);
 
   tbody.appendChild(trAverage); // Append the average row to tbody
 
