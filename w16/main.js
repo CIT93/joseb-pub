@@ -26,6 +26,38 @@ const start = (householdNumbers, houseSize) => {
 }
 
 rendertTbl(cfpData);
+// got help from chatgpt for this snippet
+document.addEventListener('DOMContentLoaded', () => {
+  const owedMachinesSelect = document.getElementById('owedMachines');
+  const dishwasherField = document.getElementById('dishwasherField');
+  const washingMachineField = document.getElementById('washingMachineField');
+
+  // Function to toggle visibility
+  const toggleFields = () => {
+    const selectedValue = owedMachinesSelect.value;
+
+    // Hide all fields initially
+    dishwasherField.style.display = 'none';
+    washingMachineField.style.display = 'none';
+
+    // Show relevant fields based on selection
+    if (selectedValue === 'dishwasher') {
+      dishwasherField.style.display = 'block';
+    } else if (selectedValue === 'washingMachine') {
+      washingMachineField.style.display = 'block';
+    } else if (selectedValue === 'both') {
+      dishwasherField.style.display = 'block';
+      washingMachineField.style.display = 'block';
+    }
+    // If "none" is selected, all fields remain hidden
+  };
+
+  // Listen for changes on the select element
+  owedMachinesSelect.addEventListener('change', toggleFields);
+
+  // Initialize visibility on page load
+  toggleFields();
+});
 
 
 FORM.addEventListener('submit', e => {
@@ -34,7 +66,6 @@ FORM.addEventListener('submit', e => {
   const lastName = FORM.lastname.value;
 
   if (firstName !== '' && lastName !== '') {
-    //SUBMIT.textContext = '';
     const fpObj = new FP(
       firstName,
       lastName,
@@ -50,41 +81,5 @@ FORM.addEventListener('submit', e => {
     saveLS(cfpData);
     rendertTbl(cfpData);
     FORM.reset(); 
-  } else {
-    //SUBMIT.textContext = "Form requires first name and last name";
-  }
+  } 
 });
-
-// FORM.addEventListener("submit", e => {
-//   console.log("Form submitted!");
-//   const firstName = FORM.firstname.value;
-//   const lastName = FORM.lastname.value;
-//   const houseMembers = parseInt(FORM.housem.value);
-//   const houseSize = FORM.houses.value;
-//   const food = FORM.food.value;
-
-
-//   let messages = []
-
-//   if (!firstName) {
-//     messages.push("Name is required")
-//   }
-
-//   if (!lastName) {
-//     messages.push("Last Name is required")
-//   }
-
-//   if (messages.length > 0) {
-//     console.log("Validation failed", messages);
-//     e.preventDefault();
-//     errorElement.innerText = messages.join(", ")
-//     errorElement.style.color = "red";
-//     return;
-//   }
-//   console.log("Validation passed! Proceeding...");
-//   const jose = new FP(firstName, lastName, houseMembers, houseSize, food);
-//   OUTPUT.innerHTML = "";
-//   cfpData.push(jose)
-//   saveLS(cfpData);
-//   rendertTbl(cfpData);
-// });

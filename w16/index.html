@@ -58,7 +58,7 @@
         </div>
         <div>
           <label>Water Consumption (Owed Machines)</label>
-          <select name="owedMachines" required>
+          <select id="owedMachines" name="owedMachines" required>
             <option value="">---Please Select Owed Machines---</option>
             <option value="dishwasher">Dishwasher</option>
             <option value="washingMachine">Washing Machine</option>
@@ -66,13 +66,13 @@
             <option value="none">None</option>
           </select>
         </div>
-        <div>
+        <div id="dishwasherField">
           <label>
             Dishwasher Runs (per week if owned):
             <input type="number" name="dwRuns" min="0">
           </label>
         </div>
-        <div>
+        <div id="washingMachineField">
           <label>
             Washing Machine Runs (per week if owned):
             <input type="number" name="wmRuns" min="0">

@@ -100,9 +100,6 @@ const renderTblBody = data => {
   trAverage.appendChild(tdAverageLabel);
   trAverage.appendChild(tdAverageValue);
 
-  // const tdEmptyActions = document.createElement("td"); // Empty cell for the "Actions" column
-  // trAverage.appendChild(tdEmptyActions);
-
   tbody.appendChild(trAverage); // Append the average row to tbody
 
 
