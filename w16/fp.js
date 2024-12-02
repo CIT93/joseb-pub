@@ -1,5 +1,5 @@
 class FP {
-    constructor(firstName, lastName, houseMembers, houseSize, food, foodSource, owedMachines, dwRuns = 0, wmRuns = 0) {
+    constructor(firstName, lastName, houseMembers, houseSize, food, foodSource, owedMachines, dwRuns = 0, wmRuns = 0, householdPurchases) {
         this.first = firstName
         this.last = lastName
         this.houseMembers = houseMembers
@@ -9,11 +9,13 @@ class FP {
         this.owedMachines = owedMachines;
         this.dwRuns = dwRuns;
         this.wmRuns = wmRuns;
+        this.householdPurchases = householdPurchases;
         this.determineHouseSizePts();
         this.determinePoints();
         this.foodChoice();
         this.calFoodSourcePoints();
         this.calWaterConsumption();
+        this.householdPurchasesCal()
         this.total();
     }
 
@@ -104,9 +106,24 @@ class FP {
             this.waterConsumptionPoints += calculateRunPoints(this.wmRuns);
         }
     }
+    householdPurchasesCal() {
+        
+        if (this.householdPurchases === "10") {
+            this.householdPurchPoints = 10;
+        } else if (this.householdPurchases === "8") {
+            this.householdPurchPoints = 8;
+        } else if (this.householdPurchases === "6") {
+            this.householdPurchPoints = 6;
+        } else if (this.householdPurchases === "4") {
+            this.householdPurchPoints = 4;
+        } else if (this.householdPurchases === "2") {
+            this.householdPurchPoints = 2;
+        }
+        console.log("HH PurchPoints:", this.householdPurchPoints);
+    } 
 
     total() {
-        this.total = this.houseHoldPoints + this.houseSizePTS + this.foodPTS + this.foodSourcePoints + this.waterConsumptionPoints;
+        this.total = this.houseHoldPoints + this.houseSizePTS + this.foodPTS + this.foodSourcePoints + this.waterConsumptionPoints + this.householdPurchPoints;
     }
 }
 export { FP }

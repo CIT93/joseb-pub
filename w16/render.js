@@ -54,6 +54,7 @@ const renderTblBtn = (index, data) => {
     FORM.owedMachines.value = rowData.owedMachines;
     FORM.dwRuns.value = rowData.dwRuns;
     FORM.wmRuns.value = rowData.wmRuns;
+    FORM.householdPurchases.value = rowData.householdPurchases;
     onUpdate(index, data)
 
   });

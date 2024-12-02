@@ -21,6 +21,8 @@ const start = (householdNumbers, houseSize) => {
     wmRuns: FORM.wmRuns,
 
 
+
+
     totalObj: total,
   });
 }
@@ -75,7 +77,8 @@ FORM.addEventListener('submit', e => {
       e.target.foodSource.value,
       e.target.owedMachines.value,
       parseInt(e.target.dwRuns.value),
-      parseInt(e.target.wmRuns.value)
+      parseInt(e.target.wmRuns.value),
+      e.target.householdPurchases.value
     );
     cfpData.push(fpObj)
     saveLS(cfpData);
