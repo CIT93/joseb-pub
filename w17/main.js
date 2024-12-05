@@ -19,10 +19,6 @@ const start = (householdNumbers, houseSize) => {
     owedMachines: FORM.owedMachines,
     dwRuns: FORM.dwRuns,
     wmRuns: FORM.wmRuns,
-
-
-
-
     totalObj: total,
   });
 }
@@ -34,31 +30,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const dishwasherField = document.getElementById('dishwasherField');
   const washingMachineField = document.getElementById('washingMachineField');
 
-  // Function to toggle visibility
-  const toggleFields = () => {
-    const selectedValue = owedMachinesSelect.value;
+  // // Function to toggle visibility
+  // const toggleFields = () => {
+  //   const selectedValue = owedMachinesSelect.value;
 
-    // Hide all fields initially
-    dishwasherField.style.display = 'none';
-    washingMachineField.style.display = 'none';
+  //   // Hide all fields initially
+  //   dishwasherField.style.display = 'none';
+  //   washingMachineField.style.display = 'none';
 
-    // Show relevant fields based on selection
-    if (selectedValue === 'dishwasher') {
-      dishwasherField.style.display = 'block';
-    } else if (selectedValue === 'washingMachine') {
-      washingMachineField.style.display = 'block';
-    } else if (selectedValue === 'both') {
-      dishwasherField.style.display = 'block';
-      washingMachineField.style.display = 'block';
-    }
-    // If "none" is selected, all fields remain hidden
-  };
+  //   // Show relevant fields based on selection
+  //   if (selectedValue === 'dishwasher') {
+  //     dishwasherField.style.display = 'block';
+  //   } else if (selectedValue === 'washingMachine') {
+  //     washingMachineField.style.display = 'block';
+  //   } else if (selectedValue === 'both') {
+  //     dishwasherField.style.display = 'block';
+  //     washingMachineField.style.display = 'block';
+  //   }
+  //   // If "none" is selected, all fields remain hidden
+  // };
 
-  // Listen for changes on the select element
-  owedMachinesSelect.addEventListener('change', toggleFields);
+  // // Listen for changes on the select element
+  // owedMachinesSelect.addEventListener('change', toggleFields);
 
-  // Initialize visibility on page load
-  toggleFields();
+  // // Initialize visibility on page load
+  // toggleFields();
 });
 
 const determineRecycleItems = e => {

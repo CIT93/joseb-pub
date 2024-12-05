@@ -1,20 +1,143 @@
-html {
-    font-size: 22px;
+/* General reset and body setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh; /* Full viewport height */
+  background-color: #f4f4f4;
+}
+
+/* Main container setup using Flexbox */
+.container {
+  display: flex;
+  justify-content: space-between; /* Place items side by side */
+  align-items: flex-start; /* Align the form to the top */
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form {
+  flex: 1 1 45%; /* Flexbox: grow, shrink, base width (45%) */
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  max-width: 800px; /* Set a max width to prevent it from growing too large on bigger screens */
+  width: 100%;
+}
+
+fieldset {
+  border: none;
+  padding: 20px;
+}
+
+legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+button {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Flexbox for table container */
+.table-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.table-wrapper {
+  flex: 1 1 45%; /* Table gets same width as form */
+  max-width: 800px; /* Max width to match the form */
+  padding: 20px;
+}
+
+#tab-data {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#tab-data th, #tab-data td {
+  padding: 15px; /* Increased padding for wider cells */
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+#tab-data th {
+  background-color: #f2f2f2;
+}
+
+#tab-data td {
+  word-wrap: break-word; /* Ensure content wraps nicely */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack the form and table vertically */
+    align-items: center;
   }
-  body {
-    background-color: black;
-    color: azure;
+
+  form, .table-wrapper {
+    flex: 1 1 90%; /* Make both form and table 90% width */
   }
-  input:in-range {
-    background-color: lightgreen; 
+}
+
+@media (max-width: 480px) {
+  form, .table-wrapper {
+    flex: 1 1 100%; /* Full width on very small screens */
+    padding: 15px;
   }
-  input:out-of-range {
-    background-color: lightcoral;
+
+  button {
+    padding: 10px 15px; /* Smaller button padding on small screens */
   }
-  table, th, td {
-    border: 1px solid;
-    padding: 5px;
+
+  #tab-data th, #tab-data td {
+    padding: 10px; /* Reduce padding for smaller screens */
   }
-  tbody tr:nth-child(odd) {
-    background-color: rgb(83, 83, 83);
-  }
+}

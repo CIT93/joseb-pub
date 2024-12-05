@@ -63,13 +63,12 @@ const renderTblBtn = (index, data) => {
     FORM.food.checked = rowData.recycle.food;
     FORM.aluminum.checked = rowData.recycle.aluminum;
 
-
     onUpdate(index, data)
 
   });
-
   return tdActions;
 }
+
 
 const calculateAverage = data => {
   const totalPoints = data.reduce((sum, item) => sum + (item.total || 0), 0);
