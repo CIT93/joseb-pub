@@ -36,7 +36,7 @@
         </div>
         <div>
           <label>Food Options</label>
-          <select name="food" required>
+          <select name="foodOption" required>
             <option value="">---Please Select Food Options---</option>
             <option value="domestic">Domestic Meat Daily</option>
             <option value="fewdomestic">Domestic Meat 2-3 Times a Day</option>
@@ -116,10 +116,82 @@
               <input type="checkbox" class="recycle" value="steel" name="steel"> steel
             </label>
             <label>
-              <input type="checkbox" class="recycle" value="foodW" name="foodW"> food waste (composting)
+              <input type="checkbox" class="recycle" value="food" name="food"> food waste (composting)
             </label>
           </div>
         </div>
+        <label>Transportation</label>
+        <fieldset>
+          <legend>Personal Vehicle Usage</legend>
+          <label>
+              <input type="radio" name="vehicle_miles" value="12">
+              More than 15,000 miles per year (12 points)
+          </label><br>
+          <label>
+              <input type="radio" name="vehicle_miles" value="10">
+              10,000 to 15,000 miles per year (10 points)
+          </label><br>
+          <label>
+              <input type="radio" name="vehicle_miles" value="6">
+              1,000 to 10,000 miles per year (6 points)
+          </label><br>
+          <label>
+              <input type="radio" name="vehicle_miles" value="4">
+              Less than 1,000 miles per year (4 points)
+          </label><br>
+          <label>
+              <input type="radio" name="vehicle_miles" value="0" checked>
+              No car (0 points)
+          </label>
+      </fieldset>
+
+      <fieldset>
+          <legend>Public Transportation Usage</legend>
+          <label>
+              <input type="radio" name="public_transport_miles" value="12">
+              More than 20,000 miles per year (12 points)
+          </label><br>
+          <label>
+              <input type="radio" name="public_transport_miles" value="10">
+              15,000 to 20,000 miles per year (10 points)
+          </label><br>
+          <label>
+              <input type="radio" name="public_transport_miles" value="6">
+              10,000 to 15,000 miles per year (6 points)
+          </label><br>
+          <label>
+              <input type="radio" name="public_transport_miles" value="4">
+              1,000 to 10,000 miles per year (4 points)
+          </label><br>
+          <label>
+              <input type="radio" name="public_transport_miles" value="2">
+              Less than 1,000 miles per year (2 points)
+          </label><br>
+          <label>
+              <input type="radio" name="public_transport_miles" value="0" checked>
+              No public transportation (0 points)
+          </label>
+      </fieldset>
+
+      <fieldset>
+          <legend>Flights</legend>
+          <label>
+              <input type="radio" name="flights" value="2">
+              Short distances within your state (2 points)
+          </label><br>
+          <label>
+              <input type="radio" name="flights" value="6">
+              To nearby states or countries (6 points)
+          </label><br>
+          <label>
+              <input type="radio" name="flights" value="20">
+              To another continent (20 points)
+          </label><br>
+          <label>
+              <input type="radio" name="flights" value="0" checked>
+              No flights (0 points)
+          </label>
+      </fieldset>
         <button type="submit">Submit</button>
       </fieldset>
     </form>

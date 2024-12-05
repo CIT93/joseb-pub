@@ -69,7 +69,7 @@ const determineRecycleItems = e => {
     paper: e.target.paper.checked,
     aluminum: e.target.aluminum.checked,
     steel: e.target.steel.checked,
-    foodW: e.target.foodW.checked,
+    food: e.target.food.checked,
     recyclePoints: (24 - (numberChecked * 4))
   }
 }
@@ -85,7 +85,7 @@ FORM.addEventListener('submit', e => {
       lastName,
       parseInt(e.target.housem.value),
       e.target.houses.value,
-      e.target.food.value,
+      e.target.foodOption.value,
       e.target.foodSource.value,
       e.target.owedMachines.value,
       parseInt(e.target.dwRuns.value),

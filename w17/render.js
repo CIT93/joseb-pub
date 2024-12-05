@@ -49,7 +49,7 @@ const renderTblBtn = (index, data) => {
     FORM.lastname.value = rowData.last;
     FORM.housem.value = rowData.houseMembers;
     FORM.houses.value = rowData.houseSize;
-    FORM.food.value = rowData.food;
+    FORM.foodOption.value = rowData.foodOption;
     FORM.foodSource.value = rowData.foodSource;
     FORM.owedMachines.value = rowData.owedMachines;
     FORM.dwRuns.value = rowData.dwRuns;
@@ -62,6 +62,7 @@ const renderTblBtn = (index, data) => {
     FORM.paper.checked = rowData.recycle.paper;
     FORM.food.checked = rowData.recycle.food;
     FORM.aluminum.checked = rowData.recycle.aluminum;
+
 
     onUpdate(index, data)
 

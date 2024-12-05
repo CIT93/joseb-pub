@@ -1,10 +1,10 @@
 class FP {
-    constructor(firstName, lastName, houseMembers, houseSize, food, foodSource, owedMachines, dwRuns = 0, wmRuns = 0, householdPurchases, wasteProduced, recycle) {
+    constructor(firstName, lastName, houseMembers, houseSize, foodOption, foodSource, owedMachines, dwRuns = 0, wmRuns = 0, householdPurchases, wasteProduced, recycle) {
         this.first = firstName
         this.last = lastName
         this.houseMembers = houseMembers
         this.houseSize = houseSize
-        this.food = food
+        this.foodOption = foodOption
         this.foodSource = foodSource;
         this.owedMachines = owedMachines;
         this.dwRuns = dwRuns;
@@ -55,19 +55,19 @@ class FP {
     }
     //Consider food choices
     foodChoice() {
-        if (this.food === "domestic") {
+        if (this.foodOption === "domestic") {
             this.foodPTS = 10;
-        } else if (this.food === "fewdomestic") {
+        } else if (this.foodOption === "fewdomestic") {
             this.foodPTS = 8;
-        } else if (this.food === "vegetarian") {
+        } else if (this.foodOption === "vegetarian") {
             this.foodPTS = 4;
-        } else if (this.food === "vegan") {
+        } else if (this.foodOption === "vegan") {
             this.foodPTS = 2;
-        } else if (this.food === "prepackedjunk") {
+        } else if (this.foodOption === "prepackedjunk") {
             this.foodPTS = 12;
-        } else if (this.food === "prepackedhealthy") {
+        } else if (this.foodOption === "prepackedhealthy") {
             this.foodPTS = 6;
-        } else if (this.food === "local") {
+        } else if (this.foodOption === "local") {
             this.foodPTS = 2;
         }
     }
