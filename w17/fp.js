@@ -12,6 +12,7 @@ class FP {
         this.householdPurchases = householdPurchases;
         this.wasteProduced = wasteProduced;
         this.recycle = recycle;
+        this.transPoints = this.calcTransPoints();
         this.determineHouseSizePts();
         this.determinePoints();
         this.foodChoice();
@@ -138,10 +139,18 @@ class FP {
         }
     } 
 
+    calcTransPoints() {
+        const vehicleMiles = parseInt(document.querySelector('input[name="vehicle_miles"]:checked')?.value || 0);
+        const publicTransportMiles = parseInt(document.querySelector('input[name="public_transport_miles"]:checked')?.value || 0);
+        const flights = parseInt(document.querySelector('input[name="flights"]:checked')?.value || 0);
+
+        return vehicleMiles + publicTransportMiles + flights;
+    }
+
     total() {
         this.total = this.houseHoldPoints + this.houseSizePTS + this.foodPTS + 
         this.foodSourcePoints + this.waterConsumptionPoints + this.householdPurchPoints + 
-        this.recycle.recyclePoints + this.wastedPoints;
+        this.recycle.recyclePoints + this.wastedPoints + this.transPoints;
     }
 }
 export { FP }
