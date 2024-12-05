@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer type="module" src="main.js"></script>
+    <title>Week 15 - Carbon Footprint - Pub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="form">
+      <fieldset>
+        <legend>Calculating Your Carbon Footprint Points</legend>
+        <div id="error"></div>
+        <div>
+          <label>First Name:</label>
+          <input type="text" name="firstname" maxlength="20"/>
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input type="text" name="lastname" maxlength="20"/>
+        </div>
+        <div>
+          <label>Count the members of your household</label>
+          <input type="number" name="housem" min="1" max="6" required />
+        </div>
+        <div>
+          <label>Consider the size of your home</label>
+          <select name="houses" required>
+            <option value="">---Please enter size of home---</option>
+            <option value="apt">Apartment</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+        <div>
+          <label>Food Options</label>
+          <select name="food" required>
+            <option value="">---Please Select Food Options---</option>
+            <option value="domestic">Domestic Meat Daily</option>
+            <option value="fewdomestic">Domestic Meat 2-3 Times a Day</option>
+            <option value="vegetarian">Vegetarian Diet</option>
+            <option value="vegan">Vegan or Only Wild Meat</option>
+            <option value="prepackedjunk">Prepacked Convenience Food</option>
+            <option value="prepackedhealthy">Prepacked Healthy Food</option>
+            <option value="local">Only Fresh Locally Grown/Hunted Food</option>
+          </select>
+        </div>
+        <div>
+          <label>Food Source</label>
+          <select name="foodSource" required>
+            <option value="">---Please Select Food Source---</option>
+            <option value="packed">Prepacked convenience food</option>
+            <option value="balance">Good balance of fresh and convenience food</option>
+            <option value="local">Only eat fresh, locally grown, or hunted food</option>
+          </select>
+        </div>
+        <div>
+          <label>Water Consumption (Owed Machines)</label>
+          <select id="owedMachines" name="owedMachines" required>
+            <option value="">---Please Select Owed Machines---</option>
+            <option value="dishwasher">Dishwasher</option>
+            <option value="washingMachine">Washing Machine</option>
+            <option value="both">Both</option>
+            <option value="none">None</option>
+          </select>
+        </div>
+        <div id="dishwasherField">
+          <label>
+            Dishwasher Runs (per week if owned):
+            <input type="number" name="dwRuns" min="0">
+          </label>
+        </div>
+        <div id="washingMachineField">
+          <label>
+            Washing Machine Runs (per week if owned):
+            <input type="number" name="wmRuns" min="0">
+          </label>
+        </div>
+        <div>
+          <label>Household Purchases</label>
+          <select name="householdPurchases" required>
+            <option value="">---household purchases you make each year---</option>
+            <option value="10">more than 7 new pieces of furniture, electronics, or other household gadgets</option>
+            <option value="8">between 5 and 7 items</option>
+            <option value="6">between 3 and 5 items</option>
+            <option value="4">less than 3 items</option>
+            <option value="2">almost nothing or only secondhand items</option>
+          </select>
+        </div>
+        <div>
+          <label>Waste Produced</label>
+          <select name="wasteProduced" required>
+            <option value="">---how many times you fill your garbage cans each week---</option>
+            <option value="50">4 garbage cans each week</option>
+            <option value="40">3 garbage cans each week</option>
+            <option value="30">2 garbage cans per week</option>
+            <option value="20">1 garbage can per week</option>
+            <option value="5">half of a garbage can or less per week</option>
+          </select>
+          <div>
+            <label>
+              <input type="checkbox" class="recycle" value="glass" name="glass"> glass
+            </label>
+            <label>
+              <input type="checkbox" class="recycle" value="plastic" name="plastic"> plastic
+            </label>
+            <label>
+              <input type="checkbox" class="recycle" value="paper" name="paper"> paper
+            </label>
+            <label>
+              <input type="checkbox" class="recycle" value="aluminum" name="aluminum"> aluminum
+            </label>
+            <label>
+              <input type="checkbox" class="recycle" value="steel" name="steel"> steel
+            </label>
+            <label>
+              <input type="checkbox" class="recycle" value="foodW" name="foodW"> food waste (composting)
+            </label>
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+  </body>
+</html>

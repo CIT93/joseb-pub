@@ -1,0 +1,2 @@
+# ID the amount of waste that you recycle
+my posible solution is to have a group of checkboxes with a total of 24 points as default, then for every checked item we deduct 4 points. all that in a function
