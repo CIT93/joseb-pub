@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Buddy</title>
+    <script defer type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="toggleDarkMode">Enable Dark Mode</button>
+    <section class="container">
+        <form id="info">
+            <fieldset>
+                <legend>Budget Buddy</legend>
+                <p>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="John" required autofocus>
+                </p>
+                <p><label for="lastName">Last Name:</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Doe" required>
+                </p>
+                <p><label for="date">Date:</label>
+                    <input type="date" name="date" id="date" required>
+                </p>
+                <p><label for="income">Income:</label>
+                    <input type="number" name="income" id="income" required>
+                </p>
+                <p><label for="moreincome">Additional Income:</label>
+                    <input type="number" name="moreincome" id="moreincome">
+                </p>
+                <p><label for="fixedExpense">Fixed Expense:</label>
+                    <input type="number" name="fixedExpense" id="fixedExpense">
+                </p>
+                <p><label for="variableExpense">Variable Expense:</label>
+                    <input type="number" name="variableExpense" id="variableExpense">
+                </p>
+                <p>
+                    <button type="submit">Submit</button>
+                </p>
+
+            </fieldset>
+        </form>
+        <div id="dataTable" ></div>
+    </section>
+</body>
+
+</html>
