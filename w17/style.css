@@ -17,7 +17,7 @@ body {
 /* Main container setup using Flexbox */
 .container {
   display: flex;
-  justify-content: space-between; /* Place items side by side */
+  justify-content: center; /* Place items side by side */
   align-items: flex-start; /* Align the form to the top */
   padding: 20px;
   width: 100%;
@@ -90,15 +90,17 @@ button:hover {
 }
 
 .table-wrapper {
-  flex: 1 1 45%; /* Table gets same width as form */
+  flex: 1 1 85%; /* Table gets same width as form */
   max-width: 800px; /* Max width to match the form */
   padding: 20px;
+  justify-content: center;
 }
 
 #tab-data {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  justify-items: center;
 }
 
 #tab-data th, #tab-data td {
